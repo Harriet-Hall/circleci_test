@@ -40,13 +40,11 @@ jobs:
     steps:
       - checkout
       - run: echo "build"
-
   test:
     executor: my-executor
     steps:
       - checkout
       - run: echo "test"
-
   deploy:
     executor: my-executor
     steps:
