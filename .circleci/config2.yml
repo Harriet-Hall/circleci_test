@@ -1,0 +1,6 @@
+jobs:
+  test:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "test"

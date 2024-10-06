@@ -1,0 +1,6 @@
+jobs:
+  deploy:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "deploy"

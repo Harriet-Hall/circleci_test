@@ -1,0 +1,6 @@
+jobs:
+  build:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "build"
