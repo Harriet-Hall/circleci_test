@@ -33,19 +33,20 @@ parameters:
   ms-edge:
     type: boolean
     default: false
+    
 jobs:
   build:
     executor: my-executor
     steps:
       - checkout
       - run: echo "build"
-jobs:
+
   test:
     executor: my-executor
     steps:
       - checkout
       - run: echo "test"
-jobs:
+
   deploy:
     executor: my-executor
     steps:
