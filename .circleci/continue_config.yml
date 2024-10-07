@@ -40,13 +40,11 @@ jobs:
     steps:
       - checkout
       - run: echo "build"
-jobs:
   test:
     executor: my-executor
     steps:
       - checkout
       - run: echo "test"
-jobs:
   deploy:
     executor: my-executor
     steps:
@@ -60,5 +58,4 @@ workflows:
           requires:
             - build
       - deploy
-
 
