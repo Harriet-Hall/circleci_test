@@ -1,0 +1,64 @@
+version: 2.1
+
+executors: # Define an executor
+  my-executor:
+    docker:
+      - image: cimg/base:2024.01
+
+parameters:
+  circleci-changes:
+    type: boolean
+    default: false
+  env-changes:
+    type: boolean
+    default: false
+  api-changes:
+    type: boolean
+    default: false
+  common-changes:
+    type: boolean
+    default: false
+  conductor-changes:
+    type: boolean
+    default: false
+  core-changes:
+    type: boolean
+    default: false
+  message-forwarder-changes:
+    type: boolean
+    default: false
+  ui-changes:
+    type: boolean
+    default: false
+  ms-edge:
+    type: boolean
+    default: false
+    
+jobs:
+  build:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "build"
+jobs:
+  test:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "test"
+jobs:
+  deploy:
+    executor: my-executor
+    steps:
+      - checkout
+      - run: echo "deploy"
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - deploy:
+
+
