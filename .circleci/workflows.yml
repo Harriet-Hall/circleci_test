@@ -5,5 +5,5 @@ workflows:
       - test:
           requires:
             - build
-      - deploy:
+      - deploy
 
