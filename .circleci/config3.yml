@@ -1,3 +1,4 @@
+jobs:
   deploy:
     executor: my-executor
     steps:
